@@ -36,7 +36,7 @@ class SkillsSection extends StatelessWidget {
     ];
     return Container(
       padding:const EdgeInsets.fromLTRB(50, 0 , 0, 0),
-      color: Color(0xFF9E9E9E),
+      color: const Color(0xFF9E9E9E),
       child: GridView.builder(
         shrinkWrap: true,
         itemCount: skillsSet.length,

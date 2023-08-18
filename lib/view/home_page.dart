@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_project/global_variables/colors.dart';
 import 'package:portfolio_project/view/about_me.dart';
+import 'package:portfolio_project/view/contact_page.dart';
 import 'package:portfolio_project/view/education_profile.dart';
+import 'package:portfolio_project/view/follow_up_page.dart';
 import 'package:portfolio_project/view/intro_sect.dart';
 import 'package:portfolio_project/view/my_projects.dart';
 import 'package:portfolio_project/view/skills.dart';
@@ -28,19 +30,23 @@ class _HomePageState extends State<HomePage> {
           children: [
             SizedBox(height: height * 0.18),
             const IntroSection(),
-            SizedBox(height: height * 0.15),
+            SizedBox(height: height * 0.13),
             const AboutMe(),
-            SizedBox(height: height * 0.18),
+            SizedBox(height: height * 0.13),
             const EducationProfile(),
-            SizedBox(height: height * 0.18),
-            Text("My Skills", style: TextStyle(fontSize: 20),),
+            SizedBox(height: height * 0.13),
+            const Text("My Skills", style: TextStyle(fontSize: 20),),
+            SizedBox(height: height * 0.1),
             const SkillsPage(),
-            SizedBox(height: height * 0.18),
+            SizedBox(height: height * 0.13),
             const Text("My Projects", style: TextStyle(fontSize: 30)),
             const Text("Projects worked on and developed"),
             SizedBox(height: height * 0.1),
             const MyProjectsPage(),
-            SizedBox(height: height * 0.1),
+            SizedBox(height: height * 0.13),
+            const ContactPage(),
+            SizedBox(height: height * 0.13),
+            const FollowUpPage()
           ],
         ),
       ),
