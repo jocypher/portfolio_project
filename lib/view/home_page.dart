@@ -7,8 +7,7 @@ import 'package:portfolio_project/view/follow_up_page.dart';
 import 'package:portfolio_project/view/intro_sect.dart';
 import 'package:portfolio_project/view/my_projects.dart';
 import 'package:portfolio_project/view/skills.dart';
-
-import '../common/app_bar.dart';
+import 'package:portfolio_project/common/app_bar.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -24,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     final height = MediaQuery.of(context).size.height;
     return   Scaffold(
       backgroundColor: backGroundColor,
-      appBar: const PreferredSize(preferredSize: Size.fromHeight(80), child: appBar()),
+      appBar:  const PreferredSize(preferredSize: Size.fromHeight(100), child: appBar()),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -39,9 +38,6 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: height * 0.13),
             const SkillsPage(),
             SizedBox(height: height * 0.13),
-            const Text("My Projects", style: TextStyle(fontSize: 30)),
-            const Text("Projects worked on and developed"),
-            SizedBox(height: height * 0.1),
             const MyProjectsPage(),
             SizedBox(height: height * 0.13),
             const ContactPage(),

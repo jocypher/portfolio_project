@@ -40,7 +40,8 @@ class SkillsSection extends StatelessWidget {
           color: Color.fromARGB(233, 255, 255, 255),
       child: Column(
         children: [
-           Text("My Skills", style: TextStyle(fontSize: 30, color: headingElementTheme),),
+           Text("My Skills", style: TextStyle(fontSize: 30, color: headingElementTheme, fontWeight: FontWeight.bold),),
+
               SizedBox(height: size.height * 0.04),
           GridView.builder(
             shrinkWrap: true,
@@ -67,8 +68,8 @@ class SkillsSection extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                      Text(skillsSetItem.name),
-                      Text(skillsSetItem.appDescription)
+                      Text(skillsSetItem.name, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                      Text(skillsSetItem.appDescription, style: TextStyle(letterSpacing: 1),)
                     ],),),
                 )
               ],

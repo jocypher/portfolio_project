@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_project/global_variables/colors.dart';
-import 'package:portfolio_project/view/home_page.dart';
 
 class appBar extends StatefulWidget {
   const appBar({super.key});
@@ -10,48 +9,87 @@ class appBar extends StatefulWidget {
 }
 
 class _appBarState extends State<appBar> {
-  
-
+bool isExperienceHover = false;
+bool isContactHover = false;
+bool isHomeHover = false;
+bool isAboutHover = false;
+bool isGithubHover = false;
   @override
   Widget build(BuildContext context) {
     return  AppBar(
-      
       elevation: 0,
       backgroundColor: backGroundColor,
-      title: Text('Portfolio project'),
-      titleTextStyle: TextStyle(color: Colors.white, fontSize: 25),
+      title: Text('WillyJo\'s Portfolio'),
+      titleTextStyle: TextStyle(color: Colors.white, fontSize: 25, letterSpacing: 1),
       centerTitle: false,
       actions: [
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-            const Text("Home", style: TextStyle(color:Colors.white, fontSize: 16),),
-            const SizedBox(width: 10,),
-            const Text("About",style: TextStyle(color:Colors.white,fontSize: 16),),
-            const SizedBox(width: 10,),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
-              },
-              child: const Text("Experience",style: TextStyle(color:Colors.white,fontSize: 16),)),
-            const SizedBox(width: 10,),
-            const Text("Contact",style: TextStyle(color:Colors.white,fontSize: 16),),
-            const SizedBox(width: 10,),
-            Container(
-              height: 40,
-              width: 100,
-              padding: const EdgeInsets.all(5),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+          InkWell(
+            onTap: (){},
+            onHover: (value) {
+              setState(() {
+                isHomeHover = value;
+              });
+            },
+            child:  Text("Home", style: TextStyle(color: isHomeHover ? headingElementTheme : Colors.white, fontSize: 16),)),
+          const SizedBox(width: 10,),
+          InkWell(
+            onTap: (){},
+            onHover: (val){
+                setState(() {
+                  isAboutHover = val;
+                });
+            },
+            child: Text("About",style: TextStyle(color:isAboutHover? headingElementTheme : Colors.white,fontSize: 16),)),
+          const SizedBox(width: 10,),
+          InkWell(
+            onTap: (){},
+            onHover: (val){
+              setState(() {
+                isExperienceHover = val;
+              });
+            },
+            child:  Text("Experience",style: TextStyle(color: isExperienceHover? headingElementTheme : Colors.white,fontSize: 16),)),
+          const SizedBox(width: 10),
+
+          InkWell(
+            onTap: (){},
+            onHover: (value){
+              setState(() {
+                isContactHover = value;
+              });
+            },
+            child:  Text("Contact",style: TextStyle(color:isContactHover? headingElementTheme : Colors.white,fontSize: 16),)),
+
+          const SizedBox(width: 10,),
+
+          AnimatedContainer(
+            duration: const Duration(seconds: 3),
+            child: Container(
+              height: 200,
+              width: 150,
               decoration:  BoxDecoration(
-                color: headingElementTheme,
-                borderRadius: BorderRadius.circular(3)
+                color: isGithubHover ? Colors.black: headingElementTheme,
+                borderRadius: BorderRadius.circular(3),
+                border: Border.all(color: isGithubHover ? headingElementTheme: Colors.black )
               ),
-              child: const Center(child: Text('Resume', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),)),
-            )
+              child:  Center(child: InkWell(
+                onTap: (){},
+                onHover: (value){
+                  setState(() {
+                    isGithubHover = value;
+                  });
+                },
+                child: const Text('Github Profile', 
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, letterSpacing: 1),
+                ))),
+            ),
+          )
         
-          ],),
-        )
+        ],)
       ]);
   }
 }
