@@ -17,7 +17,7 @@ bool isGithubHover = false;
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: EdgeInsets.only(top: 20, right: 20, left: 20),
+      padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
       child: AppBar(
         elevation: 0,
         backgroundColor: backGroundColor,
@@ -87,7 +87,7 @@ bool isGithubHover = false;
                     borderRadius: BorderRadius.circular(3),
                     border: Border.all(color: isGithubHover ? headingElementTheme: Colors.black )
                   ),
-                  child:  Center(child: const Text('Github Profile', 
+                  child:  const Center(child: Text('Github Profile', 
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, letterSpacing: 1),
                   )),
                 ),

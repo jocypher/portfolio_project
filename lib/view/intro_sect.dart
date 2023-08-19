@@ -11,6 +11,7 @@ class IntroSection extends StatefulWidget {
 class _IntroSectionState extends State<IntroSection> {
   bool isResumeHover = false;
   bool isDescribeHove = false;
+  bool isProfileHover = false;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -21,7 +22,14 @@ class _IntroSectionState extends State<IntroSection> {
         children: [
            Text("Hi! I am, ", style: TextStyle(color: headingElementTheme, fontSize: 60),),
           const Text("Jonathan Wilchield Arthur", style: TextStyle(color: Colors.white, fontSize: 60, fontWeight: FontWeight.bold),),
-           Text("I build Mobile and Web Application ", style: TextStyle(color: Colors.grey.shade600, fontSize: 52, fontWeight: FontWeight.bold),),
+           InkWell(
+            onTap: (){},
+            onHover: (val){
+              setState(() {
+                isProfileHover = val;
+              });
+            },
+            child: Text("I build Mobile and Web Application ", style: TextStyle(color: isProfileHover ? headingElementTheme: Colors.grey.shade600, fontSize: 52, fontWeight: FontWeight.bold),)),
           SizedBox(height: size.height * 0.02,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -6,27 +6,39 @@ class SkillsNeeded{
   final String name;
   final String icon;
   final String appDescription;
+  bool isSkillHover;
+
 
   SkillsNeeded({
     required this.name,
    required this.icon, 
-   required this.appDescription});
+   required this.appDescription,
+   this.isSkillHover = false
+});
 }
 
 
 
-class SkillsSection extends StatelessWidget {
+class SkillsSection extends StatefulWidget {
   const SkillsSection({super.key});
+
+  @override
+  State<SkillsSection> createState() => _SkillsSectionState();
+}
+
+class _SkillsSectionState extends State<SkillsSection> {
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+  
     final List<SkillsNeeded> skillsSet = [
-      SkillsNeeded(name: "Flutter", icon: "assets/icons8-flutter-48.png", appDescription: "I use this Framework for building mobile apps"),
+      SkillsNeeded(name: "Flutter", icon: "assets/icons8-flutter-48.png", appDescription: "I use this Framework for building mobile apps", 
+      ),
       SkillsNeeded(name: "Dart", icon: "assets/icons8-dart-48.png", appDescription: "I use it to write mobile apps"),
       SkillsNeeded(name: "Firebase", icon: "assets/icons8-firebase-48.png", appDescription: "I use it to build the backend of my application"),
       SkillsNeeded(name: "Android Dev", icon: "assets/icons8-android-os-48.png", appDescription: "I use it for building android mobile apps"),
-      SkillsNeeded(name: "Java", icon: "assets/icons8-java-48.png", appDescription: "I use it to write android mobile code"),
+      SkillsNeeded(name: "Java", icon: "assets/icons8-java-48.png", appDescription: "I use it to write android mobile code", ),
       SkillsNeeded(name: "HTML", icon: "assets/icons8-html-logo-48.png", appDescription: "I use it to build static web pages"),
       SkillsNeeded(name: "CSS", icon: "assets/icons8-css-logo-48.png", appDescription: "I use it to design static web pages"),
       SkillsNeeded(name: "JavaScript", icon: "assets/icons8-javascript-48.png", appDescription: "I use it to write backend code"),
@@ -37,11 +49,11 @@ class SkillsSection extends StatelessWidget {
     ];
     return Container(
       padding:const EdgeInsets.fromLTRB(50, 20, 0, 0),
-          color: Color.fromARGB(233, 255, 255, 255),
+          color: const Color.fromARGB(233, 255, 255, 255),
       child: Column(
         children: [
            Text("My Skills", style: TextStyle(fontSize: 30, color: headingElementTheme, fontWeight: FontWeight.bold),),
-
+    
               SizedBox(height: size.height * 0.04),
           GridView.builder(
             shrinkWrap: true,
