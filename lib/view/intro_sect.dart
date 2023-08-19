@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_project/global_variables/colors.dart';
 
-class IntroSection extends StatelessWidget {
+class IntroSection extends StatefulWidget {
   const IntroSection({super.key});
 
+  @override
+  State<IntroSection> createState() => _IntroSectionState();
+}
+
+class _IntroSectionState extends State<IntroSection> {
+  bool isResumeHover = false;
+  bool isDescribeHove = false;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -19,14 +26,33 @@ class IntroSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-            Container(
-              height: size.height * 0.06,
-              width: size.width *0.1,
-              decoration: BoxDecoration(border: Border.all(color: Colors.green),
-              borderRadius: BorderRadius.circular(8)),
-              child: const Center(child: Text('Get In Touch', style: TextStyle(color: Colors.white, fontSize: 18),)),
+            AnimatedContainer(
+              duration: const Duration(seconds: 2),
+              child: InkWell(
+                onTap: (){},
+                onHover: (value) {
+                  setState(() {
+                    isResumeHover = value;
+                  });
+                },
+                child: Container(
+                  height: size.height * 0.06,
+                  width: size.width *0.1,
+                  decoration: BoxDecoration(
+                    color: isResumeHover ? headingElementTheme: Colors.black,
+                    border: Border.all(color: isResumeHover? Colors.black : headingElementTheme),),
+                  child: const Center(child: Text('View Resume', style: TextStyle(color: Colors.white, fontSize: 18),)),
+                ),
+              ),
             ), 
-             Text("Student developer , growing while expanding my knowledge in tech", style: TextStyle(fontSize: 20, color: headingElementTheme),),
+             InkWell(
+              onHover: (val){
+                setState(() {
+                  isDescribeHove = val;
+                });
+              },
+              onTap: (){},
+              child: Text("Student developer , growing while expanding my knowledge in tech", style: TextStyle(fontSize: 20, color: isDescribeHove? headingElementTheme: Colors.grey.shade600),)),
           ],)
         ]),
     );

@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: height * 0.18),
+            SizedBox(height: height * 0.1),
             const IntroSection(),
             SizedBox(height: height * 0.13),
             const AboutMe(),
