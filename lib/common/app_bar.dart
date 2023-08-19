@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_project/global_variables/colors.dart';
+import 'package:portfolio_project/view/home_page.dart';
 
 class appBar extends StatefulWidget {
   const appBar({super.key});
@@ -29,7 +30,11 @@ class _appBarState extends State<appBar> {
             const SizedBox(width: 10,),
             Text("About",style: TextStyle(color:Colors.white),),
             const SizedBox(width: 10,),
-            Text("Experience",style: TextStyle(color:Colors.white),),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
+              },
+              child: Text("Experience",style: TextStyle(color:Colors.white),)),
             const SizedBox(width: 10,),
             Text("Contact",style: TextStyle(color:Colors.white),),
             const SizedBox(width: 10,),

@@ -11,6 +11,7 @@ import 'package:portfolio_project/view/skills.dart';
 import '../common/app_bar.dart';
 
 class HomePage extends StatefulWidget {
+
   const HomePage({super.key});
 
   @override

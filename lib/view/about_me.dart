@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
+
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
 
   @override
   Widget build(BuildContext context) {
     return  Container(
-      padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+      padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
       color: Colors.white,
       height: 500,
-      child: const Row(
+      child:  Row(
         children: [
-          Column(
+          Image.asset(""),
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -26,3 +28,9 @@ class AboutMe extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
