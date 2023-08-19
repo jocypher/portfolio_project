@@ -36,11 +36,11 @@ class SkillsSection extends StatelessWidget {
       SkillsNeeded(name: "Github", icon: "assets/icons8-github-30.png", appDescription: "I use it for storing my code, publishing my code")
     ];
     return Container(
-      padding:const EdgeInsets.fromLTRB(50, 0 , 0, 0),
+      padding:const EdgeInsets.fromLTRB(50, 20, 0, 0),
           color: Color.fromARGB(233, 255, 255, 255),
       child: Column(
         children: [
-          const Text("My Skills", style: TextStyle(fontSize: 40),),
+           Text("My Skills", style: TextStyle(fontSize: 30, color: headingElementTheme),),
               SizedBox(height: size.height * 0.04),
           GridView.builder(
             shrinkWrap: true,
