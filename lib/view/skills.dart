@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_project/global_variables/colors.dart';
 
 
 class SkillsNeeded{
@@ -36,39 +37,45 @@ class SkillsSection extends StatelessWidget {
     ];
     return Container(
       padding:const EdgeInsets.fromLTRB(50, 0 , 0, 0),
-      color: const Color(0xFF9E9E9E),
-      child: GridView.builder(
-        shrinkWrap: true,
-        itemCount: skillsSet.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, crossAxisSpacing: 3),
-         
-      itemBuilder: ((BuildContext context,int index) {
-        final skillsSetItem = skillsSet[index];
-        return Stack(
-          children: [  
-          Padding(
-            padding: const EdgeInsets.only(left: 150, top: 3),
-            child: Image.asset(skillsSetItem.icon, height: 100, fit: BoxFit.contain,),
-          ),
-            Positioned(
-              top: size.height * 0.1,
-              child: Container(
-                height: size.height * 0.33,
-                width: size.width * 0.25,
-                decoration: const BoxDecoration(
-                  color: Colors.white
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                  Text(skillsSetItem.name),
-                  Text(skillsSetItem.appDescription)
-                ],),),
-            )
-          ],
-        );
-      })),
+          color: Color.fromARGB(233, 255, 255, 255),
+      child: Column(
+        children: [
+          const Text("My Skills", style: TextStyle(fontSize: 40),),
+              SizedBox(height: size.height * 0.04),
+          GridView.builder(
+            shrinkWrap: true,
+            itemCount: skillsSet.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, crossAxisSpacing: 3),
+             
+          itemBuilder: ((BuildContext context,int index) {
+            final skillsSetItem = skillsSet[index];
+            return Stack(
+              children: [  
+              Padding(
+                padding: const EdgeInsets.only(left: 150, top: 3),
+                child: Image.asset(skillsSetItem.icon, height: 100, fit: BoxFit.contain,),
+              ),
+                Positioned(
+                  top: size.height * 0.1,
+                  child: Container(
+                    height: size.height * 0.33,
+                    width: size.width * 0.25,
+                    decoration:  BoxDecoration(
+                      color: Colors.white
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                      Text(skillsSetItem.name),
+                      Text(skillsSetItem.appDescription)
+                    ],),),
+                )
+              ],
+            );
+          })),
+        ],
+      ),
     );
   }
 }

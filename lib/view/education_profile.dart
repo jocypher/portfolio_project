@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_project/global_variables/colors.dart';
 
 class EducationProfile extends StatelessWidget {
   const EducationProfile({super.key});
@@ -7,9 +8,10 @@ class EducationProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(children: [
-        Text("My Education", style:TextStyle(color: Colors.white)),
-        Text("About my Education profile",style:TextStyle(color: Colors.white)),
-        SizedBox(height: 100,),
+        Text("My Education", style:TextStyle(color: headingElementTheme, fontSize: 30)),
+        SizedBox(height: 20),
+        Text("About my Education profile",style:TextStyle(color: Colors.white, fontSize: 20)),
+        SizedBox(height: 50),
         Row(
           children: [
             Image.network("assets/ghana-national-college-view-1.jpg",height: 400,),

@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     final height = MediaQuery.of(context).size.height;
     return   Scaffold(
       backgroundColor: backGroundColor,
-      appBar: const PreferredSize(preferredSize: Size.fromHeight(70), child: appBar()),
+      appBar: const PreferredSize(preferredSize: Size.fromHeight(80), child: appBar()),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -36,8 +36,6 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: height * 0.13),
             const EducationProfile(),
             SizedBox(height: height * 0.13),
-            const Text("My Skills", style: TextStyle(fontSize: 20),),
-            SizedBox(height: height * 0.1),
             const SkillsPage(),
             SizedBox(height: height * 0.13),
             const Text("My Projects", style: TextStyle(fontSize: 30)),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_project/global_variables/colors.dart';
 
 class IntroSection extends StatelessWidget {
   const IntroSection({super.key});
@@ -11,9 +12,9 @@ class IntroSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("Hi ! I am, ", style: TextStyle(color: Colors.blueAccent, fontSize: 40),),
-          const Text("Jonathan Wilchield Arthur", style: TextStyle(color: Colors.white, fontSize: 80, fontWeight: FontWeight.bold),),
-          const Text("I build Mobile and Web Application ", style: TextStyle(color: Colors.grey, fontSize: 72, fontWeight: FontWeight.bold),),
+           Text("Hi! I am, ", style: TextStyle(color: headingElementTheme, fontSize: 60),),
+          const Text("Jonathan Wilchield Arthur", style: TextStyle(color: Colors.white, fontSize: 60, fontWeight: FontWeight.bold),),
+           Text("I build Mobile and Web Application ", style: TextStyle(color: Colors.grey.shade600, fontSize: 52, fontWeight: FontWeight.bold),),
           SizedBox(height: size.height * 0.02,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -23,12 +24,9 @@ class IntroSection extends StatelessWidget {
               width: size.width *0.1,
               decoration: BoxDecoration(border: Border.all(color: Colors.green),
               borderRadius: BorderRadius.circular(8)),
-              child: const Center(child: Text('Get In Touch', style: TextStyle(color: Colors.white),)),
+              child: const Center(child: Text('Get In Touch', style: TextStyle(color: Colors.white, fontSize: 18),)),
             ), 
-            const Padding(
-              padding: EdgeInsets.only(right: 40),
-              child: Text("Student developer , growing while expanding my knowledge in tech", style: TextStyle(fontSize: 20, color: Colors.white),),
-            ),
+             Text("Student developer , growing while expanding my knowledge in tech", style: TextStyle(fontSize: 20, color: headingElementTheme),),
           ],)
         ]),
     );
