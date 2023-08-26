@@ -7,10 +7,8 @@ import 'package:portfolio_project/view/follow_up_page.dart';
 import 'package:portfolio_project/view/intro_sect.dart';
 import 'package:portfolio_project/view/my_projects.dart';
 import 'package:portfolio_project/view/skills.dart';
-import 'package:portfolio_project/common/app_bar.dart';
 
 class HomePage extends StatefulWidget {
-
   const HomePage({super.key});
 
   @override
@@ -21,9 +19,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    return   Scaffold(
+    return Scaffold(
       backgroundColor: backGroundColor,
-      appBar:  const PreferredSize(preferredSize: Size.fromHeight(100), child: appBar()),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: AppBar(),
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(

@@ -27,15 +27,15 @@ class AboutMe extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 15),
-              Text(
+              const Text(
               "A Flutter mobile app developer for Android and iOS. My expertise includes personal projects that enhance my skills. ",style: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: 2), textAlign: TextAlign.center, ),
 
-              Text("I've also ventured into Java for Android, JavaScript (Node and Express) for backend, and Python for machine learning.",style: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: 2), textAlign: TextAlign.center, ),
+              const Text("I've also ventured into Java for Android, JavaScript (Node and Express) for backend, and Python for machine learning.",style: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: 2), textAlign: TextAlign.center, ),
 
-              Text("My journey encompasses diverse tech fields, reflecting my commitment to continuous growth. I value collaboration,",style: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: 2),textAlign: TextAlign.center, ),
-              Text(" not only technical skills but also effective communication to projects. With a passion for frontend, backend optimization, and AI,",style: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: 2),
+              const Text("My journey encompasses diverse tech fields, reflecting my commitment to continuous growth. I value collaboration,",style: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: 2),textAlign: TextAlign.center, ),
+              const Text(" not only technical skills but also effective communication to projects. With a passion for frontend, backend optimization, and AI,",style: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: 2),
               textAlign: TextAlign.center), 
-              Text(" I strive to innovate and deliver impactful solutions. Let's create the future through technology together.",
+              const Text(" I strive to innovate and deliver impactful solutions. Let's create the future through technology together.",
               style: TextStyle(color: Colors.black, fontSize: 18, letterSpacing: 2), textAlign: TextAlign.center,),
             ],
           ),

@@ -73,15 +73,15 @@ class _SkillsSectionState extends State<SkillsSection> {
                   child: Container(
                     height: size.height * 0.33,
                     width: size.width * 0.25,
-                    decoration:  BoxDecoration(
+                    decoration:  const BoxDecoration(
                       color: Colors.white
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                      Text(skillsSetItem.name, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                      Text(skillsSetItem.appDescription, style: TextStyle(letterSpacing: 1),)
+                      Text(skillsSetItem.name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                      Text(skillsSetItem.appDescription, style: const TextStyle(letterSpacing: 1),)
                     ],),),
                 )
               ],

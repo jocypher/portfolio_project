@@ -168,7 +168,7 @@ class _MyProjectsPageState extends State<MyProjectsPage> {
                           child: const Center(child: Text('View Code')),),
                       ),
                     ),
-                      SizedBox(height: 20,)
+                      const SizedBox(height: 20,)
                   ],
                 ),
                 Image.asset("assets/icons8-android-os-48.png"),
