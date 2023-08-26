@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_project/global_variables/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class AppBar extends StatefulWidget {
-  const AppBar({super.key});
+class AppBarSection extends StatefulWidget {
+  const AppBarSection({super.key});
 
   @override
-  State<AppBar> createState() => _AppBarState();
+  State<AppBarSection> createState() => _AppBarSectionState();
 }
 
-class _AppBarState extends State<AppBar> {
+class _AppBarSectionState extends State<AppBarSection> {
   bool isExperienceHover = false;
   bool isContactHover = false;
   bool isHomeHover = false;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_project/common/app_bar.dart';
 import 'package:portfolio_project/global_variables/colors.dart';
 import 'package:portfolio_project/view/about_me.dart';
 import 'package:portfolio_project/view/contact_page.dart';
@@ -21,9 +22,9 @@ class _HomePageState extends State<HomePage> {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: backGroundColor,
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(100),
-        child: AppBar(),
+        child: AppBarSection(),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
