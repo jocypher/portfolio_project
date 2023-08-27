@@ -40,7 +40,6 @@ class _AppBarSectionState extends State<AppBarSection> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 InkWell(
-                    onTap: _launchGithubProfile,
                     onHover: (value) {
                       setState(() {
                         isHomeHover = value;
