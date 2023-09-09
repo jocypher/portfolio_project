@@ -164,6 +164,7 @@ class _SkillsSectionState extends State<SkillsSection> {
         );
       } else {
         return Container(
+          width: double.infinity,
           color: const Color.fromARGB(233, 255, 255, 255),
           child: Column(
             children: [
