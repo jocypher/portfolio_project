@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_project/global_variables/colors.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({super.key});

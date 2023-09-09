@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_project/responsive_layout/responsive_layout.dart';
-import 'package:portfolio_project/responsive_layout/tablet_screen.dart';
 
 import 'package:portfolio_project/view/home_page.dart';
-import 'package:portfolio_project/view/mobile_home.dart';
 
 void main() {
   runApp(const MyApp());

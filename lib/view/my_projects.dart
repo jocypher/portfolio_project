@@ -33,36 +33,36 @@ class _MyProjectsPageState extends State<MyProjectsPage> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Container(
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.only(left: 50, right: 50),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 30.0),
-              child: Text("My Projects",
-                  style: TextStyle(
-                      fontSize: 30,
-                      color: headingElementTheme,
-                      fontWeight: FontWeight.bold)),
+              child: Text(
+                "My Projects",
+                style: TextStyle(
+                  fontSize: 30,
+                  color: headingElementTheme,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             const Text(
               "Projects worked on and developed",
               style: TextStyle(fontSize: 20),
             ),
-            SizedBox(height: height * 0.1),
+            SizedBox(height: height * 0.05),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: Image.asset(
-                    "assets/Normal.png",
-                  ),
-                ),
-                const SizedBox(
-                  width: 15,
-                ),
+                (width > 600)
+                    ? Expanded(child: Image.asset("assets/Normal.png"))
+                    : Image.asset("assets/Normal.png", height: 200),
+                SizedBox(width: 15),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -106,9 +106,7 @@ class _MyProjectsPageState extends State<MyProjectsPage> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 100,
-            ),
+            const SizedBox(height: 100),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -151,26 +149,25 @@ class _MyProjectsPageState extends State<MyProjectsPage> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Expanded(child: Image.asset("assets/fooddesign.jpeg")),
+                SizedBox(width: 15),
+                (width > 600)
+                    ? Expanded(child: Image.asset("assets/fooddesign.jpeg"))
+                    : Image.asset("assets/fooddesign.jpeg", height: 200),
               ],
             ),
-            const SizedBox(
-              height: 100,
-            ),
+            const SizedBox(height: 100),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: Image.asset(
-                    "assets/B7473E35-200E-4B29-8B63-1BE1AA463D66.jpeg",
-                  ),
-                ),
-                const SizedBox(
-                  width: 15,
-                ),
+                (width > 600)
+                    ? Expanded(
+                        child: Image.asset(
+                            "assets/B7473E35-200E-4B29-8B63-1BE1AA463D66.jpeg"))
+                    : Image.asset(
+                        "assets/B7473E35-200E-4B29-8B63-1BE1AA463D66.jpeg",
+                        height: 200,
+                      ),
+                SizedBox(width: 15),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -212,9 +209,7 @@ class _MyProjectsPageState extends State<MyProjectsPage> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 100,
-            ),
+            const SizedBox(height: 100),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -255,15 +250,14 @@ class _MyProjectsPageState extends State<MyProjectsPage> {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    )
+                    const SizedBox(height: 20),
                   ],
                 ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Expanded(child: Image.asset("assets/instagram_clone.jpeg")),
+                SizedBox(width: 15),
+                (width > 600)
+                    ? Expanded(
+                        child: Image.asset("assets/instagram_clone.jpeg"))
+                    : Image.asset("assets/instagram_clone.jpeg", height: 200),
               ],
             ),
           ],
