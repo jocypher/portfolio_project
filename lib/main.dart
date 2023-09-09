@@ -20,13 +20,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      home: ResponsiveLayout(
-        mobileScreenLayout: mobileHomePage(),
-        webScreenLayout: HomePage(),
-        tabletScreenLayout: TabletScreen(),
-      ),
-    );
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        home: HomePage());
   }
 }
