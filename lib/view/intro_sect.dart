@@ -180,6 +180,7 @@ class _IntroSectionState extends State<IntroSection> {
                 onTap: () {},
                 child: Text(
                   "Student developer, growing while expanding my knowledge in tech",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: constraints.maxWidth > 600
                         ? 20

@@ -40,8 +40,10 @@ class EducationProfile extends StatelessWidget {
                         const SizedBox(height: 20),
                         const Text(
                           "I attended High School at Ghana National College in the year 2018.\ncompleted my Senior High School Certificate Examination in the year 2021.\nI studied General Arts in my Senior High School. P.R.O in the Student Representative Council.\nMath and Python tutor for my colleagues.",
-                          style:
-                              TextStyle(color: Colors.white, letterSpacing: 1),
+                          style: TextStyle(
+                              color: Colors.white,
+                              letterSpacing: 1,
+                              fontSize: 14),
                         ),
                       ],
                     )
@@ -59,11 +61,13 @@ class EducationProfile extends StatelessWidget {
                             color: headingElementTheme.withOpacity(1),
                             fontSize: 20)),
                     const Text("High School",
-                        style: TextStyle(color: Colors.white, fontSize: 16)),
+                        style: TextStyle(color: Colors.white, fontSize: 14)),
                     const SizedBox(height: 20),
                     const Text(
                       "I attended High School at Ghana National College in the year 2018.\ncompleted my Senior High School Certificate Examination in the year 2021.\nI studied General Arts in my Senior High School. P.R.O in the Student Representative Council.\nMath and Python tutor for my colleagues.",
-                      style: TextStyle(color: Colors.white, letterSpacing: 1),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white, letterSpacing: 1, fontSize: 12),
                     ),
                   ],
                 );
