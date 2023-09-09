@@ -15,12 +15,10 @@ class _IntroSectionState extends State<IntroSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 30), // Responsive padding
-
-      child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          final size = MediaQuery.of(context).size;
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        final size = MediaQuery.of(context).size;
+        if (constraints.maxWidth > 600) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -48,9 +46,7 @@ class _IntroSectionState extends State<IntroSection> {
                     color: isProfileHover
                         ? headingElementTheme
                         : Colors.grey.shade600,
-                    fontSize: constraints.maxWidth > 600
-                        ? 52
-                        : 30, // Adjust font size
+                    fontSize: constraints.maxWidth > 600 ? 52 : 30,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -80,7 +76,7 @@ class _IntroSectionState extends State<IntroSection> {
                                   ? Colors.black
                                   : headingElementTheme),
                         ),
-                        child: Center(
+                        child: const Center(
                             child: Text('View Resume',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 18))),
@@ -110,8 +106,94 @@ class _IntroSectionState extends State<IntroSection> {
               ),
             ],
           );
-        },
-      ),
+        } else {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Hi! I am, ",
+                style: TextStyle(color: headingElementTheme, fontSize: 60),
+              ),
+              const Text(
+                "Jonathan Wilchield Arthur",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 60,
+                    fontWeight: FontWeight.bold),
+              ),
+              InkWell(
+                onTap: () {},
+                onHover: (val) {
+                  setState(() {
+                    isProfileHover = val;
+                  });
+                },
+                child: Text(
+                  "I build Mobile and Web Application ",
+                  style: TextStyle(
+                    color: isProfileHover
+                        ? headingElementTheme
+                        : Colors.grey.shade600,
+                    fontSize: constraints.maxWidth > 600 ? 52 : 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(height: size.height * 0.02),
+              AnimatedContainer(
+                duration: const Duration(seconds: 2),
+                child: InkWell(
+                  onTap: () {},
+                  onHover: (value) {
+                    setState(() {
+                      isResumeHover = value;
+                    });
+                  },
+                  child: Container(
+                    height: size.height * 0.06,
+                    width: size.width * 0.2,
+                    decoration: BoxDecoration(
+                      color: isResumeHover ? headingElementTheme : Colors.black,
+                      border: Border.all(
+                          color: isResumeHover
+                              ? Colors.black
+                              : headingElementTheme),
+                    ),
+                    child: Center(
+                        child: Text('View Resume',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize:
+                                    constraints.maxWidth > 600 ? 18 : 12))),
+                  ),
+                ),
+              ),
+              SizedBox(height: size.height * 0.02),
+              InkWell(
+                onHover: (val) {
+                  setState(() {
+                    isDescribeHover = val;
+                  });
+                },
+                onTap: () {},
+                child: Text(
+                  "Student developer, growing while expanding my knowledge in tech",
+                  style: TextStyle(
+                    fontSize: constraints.maxWidth > 600
+                        ? 20
+                        : 13, // Adjust font size
+                    color: isDescribeHover
+                        ? headingElementTheme
+                        : Colors.grey.shade600,
+                  ),
+                ),
+              ),
+            ],
+          );
+        }
+      },
     );
   }
 }
