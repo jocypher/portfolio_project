@@ -91,75 +91,136 @@ class _SkillsSectionState extends State<SkillsSection> {
       )
     ];
 
-    int crossAxisCount = (size.width > 600) ? 3 : 2;
+    int crossAxisCount = (size.width > 600) ? 3 : 1;
 
-    return Container(
-      padding: const EdgeInsets.fromLTRB(50, 20, 0, 0),
-      color: const Color.fromARGB(233, 255, 255, 255),
-      child: Column(
-        children: [
-          Text(
-            "My Skills",
-            style: TextStyle(
-              fontSize: 30,
-              color: headingElementTheme,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: size.height * 0.04),
-          GridView.builder(
-            shrinkWrap: true,
-            itemCount: skillsSet.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: crossAxisCount,
-              crossAxisSpacing: 3,
-            ),
-            itemBuilder: ((BuildContext context, int index) {
-              final skillsSetItem = skillsSet[index];
-              return Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 150, top: 3),
-                    child: Image.asset(
-                      skillsSetItem.icon,
-                      height: 100,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  Positioned(
-                    top: size.height * 0.1,
-                    child: Container(
-                      height: size.height * 0.33,
-                      width: size.width * 0.25,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
+    return LayoutBuilder(builder: (context, constraints) {
+      if (constraints.maxWidth > 600) {
+        return Container(
+          padding: const EdgeInsets.fromLTRB(50, 20, 0, 0),
+          color: const Color.fromARGB(233, 255, 255, 255),
+          child: Column(
+            children: [
+              Text(
+                "My Skills",
+                style: TextStyle(
+                  fontSize: 30,
+                  color: headingElementTheme,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: size.height * 0.04),
+              GridView.builder(
+                shrinkWrap: true,
+                itemCount: skillsSet.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: crossAxisCount,
+                  crossAxisSpacing: 3,
+                ),
+                itemBuilder: ((BuildContext context, int index) {
+                  final skillsSetItem = skillsSet[index];
+                  return Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 150, top: 3),
+                        child: Image.asset(
+                          skillsSetItem.icon,
+                          height: 100,
+                          fit: BoxFit.contain,
+                        ),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            skillsSetItem.name,
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+                      Positioned(
+                        top: size.height * 0.1,
+                        child: Container(
+                          height: size.height * 0.33,
+                          width: size.width * 0.25,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
                           ),
-                          Text(
-                            skillsSetItem.appDescription,
-                            style: const TextStyle(letterSpacing: 1),
-                          )
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              );
-            }),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                skillsSetItem.name,
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                skillsSetItem.appDescription,
+                                style: const TextStyle(letterSpacing: 1),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  );
+                }),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
+        );
+      } else {
+        return Container(
+          color: const Color.fromARGB(233, 255, 255, 255),
+          child: Column(
+            children: [
+              Text(
+                "My Skills",
+                style: TextStyle(
+                  fontSize: 30,
+                  color: headingElementTheme,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: size.height * 0.04),
+              Column(
+                children: skillsSet.map((skillsSetItem) {
+                  return Column(
+                    children: [
+                      Image.asset(
+                        skillsSetItem.icon,
+                        height: 100,
+                        fit: BoxFit.contain,
+                      ),
+                      Container(
+                        height: size.height * 0.33,
+                        width: size.width * 0.7,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              skillsSetItem.name,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              skillsSetItem.appDescription,
+                              style: const TextStyle(letterSpacing: 1),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: size.height * 0.04),
+                    ],
+                  );
+                }).toList(),
+              ),
+            ],
+          ),
+        );
+      }
+    });
   }
 }
 
